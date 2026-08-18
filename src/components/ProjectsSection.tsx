@@ -10,103 +10,171 @@ interface Project {
   githubUrl: string;
   tech: string[];
   metrics: { label: string; value: string }[];
+  upcoming?: boolean;
 }
 
+const GH = 'https://github.com/shubham-vishwakarma5606';
+
+// All 8 public repos + 3 upcoming topic cards.
+// Descriptions are inferred from repo names/descriptions — please confirm/edit.
 const projects: Project[] = [
   {
     number: '01',
-    title: 'PolicyGuard AI',
-    category: 'AI / LEGAL-TECH PLATFORM',
+    title: 'Citadel-Nexsus',
+    category: 'WAF / DEFENSIVE SECURITY',
     description:
-      'AI-powered platform engineered for automated privacy policy analysis and legal contract auditing across web, desktop, and mobile. Implements NLP extraction, real-time risk alert detection, and generative risk score intelligence.',
-    githubUrl: 'https://github.com/lohithadamisetti123',
-    tech: [
-      'React.js',
-      'React Native',
-      'Electron.js',
-      'Node.js',
-      'Express.js',
-      'MongoDB Atlas',
-      'OpenAI API',
-      'Prompt Eng',
-      'NLP',
-      'Docker',
-      'JWT',
-    ],
+      'Web Application Firewall engine engineered to inspect, filter, and block malicious HTTP traffic at the application layer. Implements custom rule pipelines for traffic classification and threat neutralization.',
+    githubUrl: `${GH}/Citadel-Nexsus`,
+    tech: ['JavaScript', 'Node.js', 'Express', 'Security Rules', 'HTTP Proxy', 'JWT'],
     metrics: [
-      { label: 'PLATFORMS', value: 'Web, Mobile, Desktop' },
-      { label: 'ENGINE', value: 'OpenAI NLP / GPT' },
-      { label: 'PIPELINE', value: 'Automated Scoring' },
+      { label: 'TYPE', value: 'Web App Firewall' },
+      { label: 'LAYER', value: 'Application' },
+      { label: 'ENGINE', value: 'Custom Rules' },
     ],
   },
   {
     number: '02',
-    title: 'Software Release Risk Heatmap',
-    category: 'MACHINE LEARNING / DEV PLATFORM',
+    title: 'Kavach360',
+    category: 'CYBERSECURITY AWARENESS / TRAINING',
     description:
-      'Full-stack predictive release management platform utilizing Machine Learning. Implements a trained Random Forest classifier to categorize release stability from Low to Critical risk, rendered over a live interactive team heatmap.',
-    githubUrl: 'https://github.com/lohithadamisetti123',
-    tech: [
-      'React.js',
-      'TypeScript',
-      'Python',
-      'FastAPI',
-      'scikit-learn',
-      'PostgreSQL',
-      'Tailwind CSS',
-      'REST APIs',
-      'JWT',
-    ],
+      'Interactive cybersecurity awareness, training, and simulation platform. Teaches threat recognition, phishing defense, safe digital practices, and incident response through scenario-based learning modules.',
+    githubUrl: `${GH}/Kavach360`,
+    tech: ['HTML', 'CSS', 'JavaScript', 'Interactive Modules', 'Scenario Engine'],
     metrics: [
-      { label: 'MODEL', value: 'Random Forest' },
-      { label: 'ACCURACY', value: 'High Precision' },
-      { label: 'DASHBOARD', value: 'Live Risk Heatmap' },
+      { label: 'FOCUS', value: 'Awareness' },
+      { label: 'MODE', value: 'Simulation' },
+      { label: 'AUDIENCE', value: 'Learners' },
     ],
   },
   {
     number: '03',
-    title: 'Multi-Tenant SaaS Platform',
-    category: 'CLOUD / DISTRIBUTED SYSTEM',
+    title: 'CyberS3anRemoteAccess',
+    category: 'REMOTE ACCESS / OFFENSIVE TOOLING',
     description:
-      'Enterprise-grade multi-tenant platform built for unified management of teams, projects, and execution lifecycles. Architected with strict tenant data isolation, granular Role-Based Access Control (RBAC), and containerized deployments.',
-    githubUrl: 'https://github.com/lohithadamisetti123',
-    tech: [
-      'Node.js',
-      'Express.js',
-      'PostgreSQL',
-      'React',
-      'Docker',
-      'JWT',
-      'RBAC',
-      'REST APIs',
-    ],
+      'Controlled remote-access framework for authorized testing, demonstrations, and learning environments. Built with a focus on transparency, ethical use, and clear operational boundaries.',
+    githubUrl: `${GH}/CyberS3anRemoteAccess`,
+    tech: ['HTML', 'CSS', 'JavaScript', 'Networking', 'WebRTC'],
     metrics: [
-      { label: 'ARCHITECTURE', value: 'Multi-Tenant' },
-      { label: 'SECURITY', value: 'RBAC Isolation' },
-      { label: 'CONTAINERS', value: 'Docker Compose' },
+      { label: 'PURPOSE', value: 'Authorized Use' },
+      { label: 'MODE', value: 'Controlled' },
+      { label: 'STACK', value: 'Web-based' },
     ],
   },
   {
     number: '04',
-    title: 'Payment Gateway with Hosted Checkout',
-    category: 'FINTECH / PAYMENT SYSTEMS',
+    title: 'Nightgrid',
+    category: 'SECURITY UTILITY / TOOLING',
     description:
-      'End-to-end hosted payment gateway infrastructure supporting seamless merchant order generation, multi-currency processing, and secure consumer checkout via UPI and Cards with webhook transaction verification.',
-    githubUrl: 'https://github.com/lohithadamisetti123',
-    tech: [
-      'Node.js',
-      'Spring Boot',
-      'PostgreSQL',
-      'React',
-      'Docker',
-      'REST APIs',
-      'UPI / Card Integrations',
-    ],
+      'Focused security and networking utility toolkit — a set of scripts and helpers for grid-level analysis, reconnaissance, and operational support tasks.',
+    githubUrl: `${GH}/Nightgrid`,
+    tech: ['JavaScript', 'Node.js', 'Networking', 'CLI Utilities'],
     metrics: [
-      { label: 'PROTOCOLS', value: 'UPI & Cards' },
-      { label: 'BACKEND', value: 'Spring Boot + Node' },
-      { label: 'DATABASE', value: 'ACID PostgreSQL' },
+      { label: 'TYPE', value: 'Toolkit' },
+      { label: 'DOMAIN', value: 'Network' },
+      { label: 'USE', value: 'Recon + Ops' },
     ],
+  },
+  {
+    number: '05',
+    title: 'Deftools',
+    category: 'DEFENSIVE UTILITIES / TOOLING',
+    description:
+      'Suite of defensive security utilities — small, focused tools that support system hardening, posture checks, and reconnaissance-style audits on authorized targets.',
+    githubUrl: `${GH}/Deftools`,
+    tech: ['JavaScript', 'Node.js', 'CLI Utilities', 'Hardening'],
+    metrics: [
+      { label: 'FOCUS', value: 'Defense' },
+      { label: 'FORM', value: 'CLI Tools' },
+      { label: 'STYLE', value: 'Focused' },
+    ],
+  },
+  {
+    number: '06',
+    title: 'series-hub',
+    category: 'STREAMING / CONSUMER PLATFORM',
+    description:
+      'Streaming/OTT-style platform engineered for browsing and watching series. Smooth catalog navigation, content discovery, and a focus on a clean viewing experience.',
+    githubUrl: `${GH}/series-hub`,
+    tech: ['JavaScript', 'HTML/CSS', 'API Integration', 'UI/UX'],
+    metrics: [
+      { label: 'DOMAIN', value: 'Streaming' },
+      { label: 'FEATURE', value: 'Catalog' },
+      { label: 'STACK', value: 'JavaScript' },
+    ],
+  },
+  {
+    number: '07',
+    title: 'Website',
+    category: 'WEB PRESENCE / TYPE-SCRIPT',
+    description:
+      'Personal website and web presence for the CyberS3an brand, built with TypeScript for type safety and modern web tooling.',
+    githubUrl: `${GH}/Website`,
+    tech: ['TypeScript', 'Web Framework', 'UI/UX'],
+    metrics: [
+      { label: 'TYPE', value: 'Website' },
+      { label: 'LANG', value: 'TypeScript' },
+      { label: 'BRAND', value: 'CyberS3an' },
+    ],
+  },
+  {
+    number: '08',
+    title: 'CyberS3an_porfolio',
+    category: 'PORTFOLIO / WEB',
+    description:
+      'Curated portfolio site for the CyberS3an ecosystem — a focused showcase of cybersecurity projects, research, and the work behind them.',
+    githubUrl: `${GH}/CyberS3an_porfolio`,
+    tech: ['HTML', 'CSS', 'JavaScript', 'Portfolio Layout'],
+    metrics: [
+      { label: 'TYPE', value: 'Portfolio' },
+      { label: 'STACK', value: 'HTML/CSS/JS' },
+      { label: 'THEME', value: 'CyberS3an' },
+    ],
+  },
+  // ===== UPCOMING / IN-PROGRESS TOPICS (user to confirm) =====
+  {
+    number: 'U1',
+    title: 'Threat Intelligence Platform',
+    category: 'UPCOMING / IN PROGRESS',
+    description:
+      'Planned platform for aggregating threat feeds and indicators of compromise (IOCs), surfacing actionable intelligence for defenders and security teams.',
+    githubUrl: GH,
+    tech: ['JavaScript', 'TypeScript', 'Python', 'Threat Intel', 'APIs'],
+    metrics: [
+      { label: 'STATUS', value: 'Planning' },
+      { label: 'DOMAIN', value: 'Threat Intel' },
+      { label: 'ROLE', value: 'Aggregator' },
+    ],
+    upcoming: true,
+  },
+  {
+    number: 'U2',
+    title: 'Security Automation Pipeline',
+    category: 'UPCOMING / IN PROGRESS',
+    description:
+      'Planned automated scanning and CI/CD security pipeline — integrating static analysis, dependency checks, and posture audits into developer workflows.',
+    githubUrl: GH,
+    tech: ['Python', 'Bash', 'CI/CD', 'SAST', 'Automation'],
+    metrics: [
+      { label: 'STATUS', value: 'Planning' },
+      { label: 'DOMAIN', value: 'DevSecOps' },
+      { label: 'FOCUS', value: 'Automation' },
+    ],
+    upcoming: true,
+  },
+  {
+    number: 'U3',
+    title: 'Cloud Security Posture Manager',
+    category: 'UPCOMING / IN PROGRESS',
+    description:
+      'Planned cloud security posture tool for auditing configurations across cloud providers — surfacing misconfigurations, drift, and compliance gaps.',
+    githubUrl: GH,
+    tech: ['Python', 'TypeScript', 'Cloud APIs', 'Posture Mgmt'],
+    metrics: [
+      { label: 'STATUS', value: 'Planning' },
+      { label: 'DOMAIN', value: 'Cloud Security' },
+      { label: 'GOAL', value: 'Misconfig Audit' },
+    ],
+    upcoming: true,
   },
 ];
 
@@ -116,13 +184,10 @@ export const ProjectsSection: React.FC = () => {
       id="work"
       className="relative w-full bg-black text-[#E8DFD8] font-sans selection:bg-[#cbb59d] selection:text-black pt-20 pb-32 px-6 sm:px-12 lg:px-20"
     >
-      {/* Studio Ambient Glows */}
       <div className="absolute top-1/4 left-1/3 w-[36rem] h-[36rem] bg-[#D4AF37]/5 rounded-full blur-[180px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-[#8C6D4F]/5 rounded-full blur-[170px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
-        
-        {/* Eyebrow Header */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -139,7 +204,6 @@ export const ProjectsSection: React.FC = () => {
           <div className="w-20 h-[1px] bg-gradient-to-r from-[#D4AF37]/80 via-[#8C6D4F]/40 to-transparent" />
         </motion.div>
 
-        {/* Section Headline */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -152,10 +216,10 @@ export const ProjectsSection: React.FC = () => {
             style={{ fontFamily: "'Bebas Neue', sans-serif" }}
           >
             <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#D5CBC0] to-[#605448] drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
-              SELECTED WORKS.
+              BUILT &amp; SHIPPED.
             </span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#F7E7C4] via-[#C99E5D] to-[#543B1A] drop-shadow-[0_8px_25px_rgba(201,158,93,0.35)]">
-              ENGINEERED VALUE.
+              CYBERS3AN STACK.
             </span>
           </h2>
 
@@ -163,35 +227,35 @@ export const ProjectsSection: React.FC = () => {
             className="text-xs sm:text-sm font-light text-[#A8988B] max-w-sm mt-4 md:mt-0 leading-relaxed"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
-            Scroll down to unfold the system architecture cards. Each platform was built to solve complex operational challenges.
+            Every repo on the GitHub, plus a few upcoming topics in the pipeline. Scroll to unfold the full stack.
           </p>
         </motion.div>
 
-        {/* React Bits Stacking Deck */}
-        {/* React Bits Stacking Deck */}
-<ScrollStack
-  itemDistance={20}
-  itemScale={0.035}
-  itemStackDistance={28}
-  stackPosition="15%"
-  scaleEndPosition="6%"
-  baseScale={0.88}
-  useWindowScroll={true}
->
+        <ScrollStack
+          itemDistance={20}
+          itemScale={0.035}
+          itemStackDistance={28}
+          stackPosition="15%"
+          scaleEndPosition="6%"
+          baseScale={0.88}
+          useWindowScroll={true}
+        >
           {projects.map((project) => (
-            <ScrollStackItem key={project.title}>
-              <div className="relative w-full rounded-2xl border border-[#8C6D4F]/50 bg-[#0E0C0A] p-8 sm:p-12 shadow-[0_25px_70px_rgba(0,0,0,0.98)] group overflow-hidden transition-colors duration-500 hover:border-[#D4AF37]">
-                
-                {/* Top Gold Border Light Flare */}
+            <ScrollStackItem key={project.number}>
+              <div
+                className={`relative w-full rounded-2xl border ${
+                  project.upcoming
+                    ? 'border-[#D4AF37]/40 bg-[#0E0C0A]'
+                    : 'border-[#8C6D4F]/50 bg-[#0E0C0A]'
+                } p-8 sm:p-12 shadow-[0_25px_70px_rgba(0,0,0,0.98)] group overflow-hidden transition-colors duration-500 hover:border-[#D4AF37]`}
+              >
                 <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/80 to-transparent" />
 
-                {/* Corner Minimal L-Brackets */}
                 <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[#D4AF37]/60 group-hover:border-[#D4AF37] transition-colors" />
                 <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-[#D4AF37]/60 group-hover:border-[#D4AF37] transition-colors" />
                 <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-[#D4AF37]/60 group-hover:border-[#D4AF37] transition-colors" />
                 <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[#D4AF37]/60 group-hover:border-[#D4AF37] transition-colors" />
 
-                {/* Big Background Watermark Number */}
                 <span
                   className="absolute -bottom-6 -right-3 text-8xl sm:text-9xl font-bold text-[#EAD8C7]/5 select-none pointer-events-none leading-none"
                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
@@ -199,14 +263,11 @@ export const ProjectsSection: React.FC = () => {
                   {project.number}
                 </span>
 
-                {/* Content Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative z-10">
-                  
-                  {/* Left Column (7 Cols) */}
                   <div className="lg:col-span-7 flex flex-col justify-between">
                     <div>
                       <div className="flex items-center space-x-3 mb-4">
-                        <span className="text-xs font-mono font-bold text-[#D4AF37]">
+                        <span className={`text-xs font-mono font-bold ${project.upcoming ? 'text-[#C99E5D]' : 'text-[#D4AF37]'}`}>
                           {project.number} //
                         </span>
                         <span className="text-[10.5px] font-mono tracking-[0.25em] uppercase text-[#A8988B]">
@@ -229,7 +290,6 @@ export const ProjectsSection: React.FC = () => {
                       </p>
                     </div>
 
-                    {/* Tech Stack Pills */}
                     <div className="flex flex-wrap gap-2 pt-6 border-t border-[#8C6D4F]/25">
                       {project.tech.map((t) => (
                         <span
@@ -243,11 +303,10 @@ export const ProjectsSection: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Right Column (5 Cols) */}
                   <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-6 lg:pl-6 lg:border-l lg:border-[#8C6D4F]/25">
                     <div className="space-y-3">
                       <span className="text-[9.5px] font-mono tracking-[0.25em] uppercase text-[#8C6D4F] block mb-2">
-                        // ARCHITECTURE METRICS
+                        // METRICS
                       </span>
                       {project.metrics.map((m) => (
                         <div
@@ -271,11 +330,10 @@ export const ProjectsSection: React.FC = () => {
                       className="inline-flex items-center justify-center space-x-3 px-6 py-3.5 border border-[#8C6D4F] bg-[#16120E] hover:border-[#D4AF37] hover:bg-[#D4AF37] text-[#EAD8C7] hover:text-black text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.1)]"
                       style={{ fontFamily: "'Montserrat', sans-serif" }}
                     >
-                      <span>VIEW ON GITHUB</span>
+                      <span>{project.upcoming ? 'TRACK PROGRESS' : 'VIEW ON GITHUB'}</span>
                       <span className="text-xs">↗</span>
                     </a>
                   </div>
-
                 </div>
               </div>
             </ScrollStackItem>

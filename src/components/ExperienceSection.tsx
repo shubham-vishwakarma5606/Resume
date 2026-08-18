@@ -10,41 +10,43 @@ interface RouteStop {
   description: string;
 }
 
+// Cybersecurity journey — derived from GitHub activity (shubham-vishwakarma5606).
+// Add education/certifications from your resume PDF once shared.
 const journey: RouteStop[] = [
   {
     id: '01',
-    year: 'MAY - JUN 2026',
-    title: 'FULL STACK & MOBILE INTERN',
-    organization: 'TECHNICAL HUB PVT LTD',
-    description: 'Engineered cross-platform mobile and responsive web applications utilizing React Native and modern full-stack workflows.',
+    year: 'AUG 2026',
+    title: 'SERIES-HUB LAUNCH',
+    organization: 'CONSUMER STREAMING BUILD',
+    description: 'Shipped a streaming-style web platform for browsing and watching series — full catalog UI, content discovery, and smooth playback experience.',
   },
   {
     id: '02',
-    year: '2026 MILESTONE',
-    title: 'TOP 100 NATIONAL TEAM',
-    organization: 'MYNTRA WEFORSHE HACKERRAMP',
-    description: 'Ranked among the Top 100 nationwide teams while maintaining Department Topper status (9.07 CGPA) in Data Science.',
+    year: 'JUL 2026',
+    title: 'CITADEL-NEXSUS',
+    organization: 'WAF ENGINEERING',
+    description: 'Designed and built a Web Application Firewall with custom rule pipelines for inspecting, classifying, and blocking malicious HTTP traffic.',
   },
   {
     id: '03',
-    year: 'MAY - JUN 2025',
-    title: 'FULL STACK TRAINEE',
-    organization: 'TECHNICAL HUB PVT LTD',
-    description: 'Trained in modern full-stack architecture, developing and deploying end-to-end interactive responsive web platforms.',
+    year: 'JUL 2026',
+    title: 'KAVACH360',
+    organization: 'CYBERSECURITY AWARENESS',
+    description: 'Built an interactive cybersecurity awareness, training, and simulation platform with scenario-based learning modules for threat recognition and phishing defense.',
   },
   {
     id: '04',
-    year: '2023 - 2027',
-    title: 'B.TECH IN DATA SCIENCE',
-    organization: 'ADITYA COLLEGE OF ENGINEERING',
-    description: 'Specializing in Machine Learning and System Design. Solved 1200+ algorithm challenges across LeetCode, CodeChef, and GeeksforGeeks.',
+    year: 'JUL 2025',
+    title: 'CYBERS3AN ECOSYSTEM',
+    organization: 'DEFENSE TOOLING + REMOTE ACCESS',
+    description: 'Launched the CyberS3an ecosystem — Deftools (defensive utilities), Nightgrid (security toolkit), and CyberS3anRemoteAccess (controlled remote-access framework).',
   },
   {
     id: '05',
-    year: '2021 - 2023',
-    title: 'HIGHER SECONDARY (MPC)',
-    organization: 'SRI CHAITANYA JUNIOR COLLEGE',
-    description: 'Completed specialized coursework in Mathematics, Physics, and Chemistry with 90.60% aggregate excellence.',
+    year: 'OCT 2023',
+    title: 'JOURNEY STARTED',
+    organization: 'OPEN-SOURCE SECURITY BUILDER',
+    description: 'Began publishing security-focused repositories as open source on GitHub — building in public across offensive research, defensive engineering, and awareness.',
   },
 ];
 
@@ -64,12 +66,9 @@ export const ExperienceSection: React.FC = () => {
       ref={containerRef}
       className="relative w-full bg-black text-[#E8DFD8] font-sans selection:bg-[#cbb59d] selection:text-black pt-4 pb-24 px-6 sm:px-12 lg:px-20 overflow-hidden"
     >
-      {/* Subtle Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-[#D4AF37]/[0.03] rounded-full blur-[150px] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto w-full relative z-10">
-        
-        {/* Eyebrow Header */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -81,12 +80,11 @@ export const ExperienceSection: React.FC = () => {
             className="text-[11px] font-medium tracking-[0.35em] uppercase text-[#D4AF37]"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
-            04 / EXPERIENCE
+            04 / JOURNEY
           </span>
           <div className="w-20 h-[1px] bg-gradient-to-r from-[#D4AF37]/80 via-[#8C6D4F]/40 to-transparent" />
         </motion.div>
 
-        {/* Section Headline */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -99,21 +97,17 @@ export const ExperienceSection: React.FC = () => {
             style={{ fontFamily: "'Bebas Neue', sans-serif" }}
           >
             <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#D5CBC0] to-[#605448] drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
-              EXPERIENCE &amp;
+              CYBERS3AN
             </span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#F7E7C4] via-[#C99E5D] to-[#543B1A] drop-shadow-[0_8px_25px_rgba(201,158,93,0.35)]">
-              MILESTONES.
+              TIMELINE.
             </span>
           </h2>
         </motion.div>
 
-        {/* Minimalist Route Map */}
         <div className="relative w-full">
-          
-          {/* Background Track */}
           <div className="absolute left-[19px] md:left-[140px] top-4 bottom-8 w-[1px] bg-[#8C6D4F]/20" />
-          
-          {/* Animated Gold Track */}
+
           <motion.div
             style={{ height: lineHeight }}
             className="absolute left-[19px] md:left-[140px] top-4 w-[2px] bg-gradient-to-b from-[#D4AF37] via-[#C99E5D] to-[#8C6D4F]/10 shadow-[0_0_10px_#D4AF37] origin-top"
@@ -129,22 +123,18 @@ export const ExperienceSection: React.FC = () => {
                 transition={{ duration: 0.7, delay: idx * 0.08 }}
                 className="relative flex flex-col md:flex-row items-start group"
               >
-                {/* Desktop Year (Left side of track) */}
                 <div className="hidden md:block w-[140px] shrink-0 pr-8 pt-0.5 text-right">
                   <span className="text-[10px] font-mono tracking-[0.2em] text-[#8C6D4F] group-hover:text-[#D4AF37] transition-colors">
                     {stop.year}
                   </span>
                 </div>
 
-                {/* Route Node */}
                 <div className="absolute left-[19px] md:left-[140px] top-1.5 -translate-x-1/2 flex items-center justify-center">
                   <div className="absolute w-6 h-6 rounded-full border border-[#D4AF37]/0 group-hover:border-[#D4AF37]/40 group-hover:scale-150 transition-all duration-700 ease-out" />
                   <div className="w-2.5 h-2.5 rounded-full bg-[#120F0C] border border-[#8C6D4F] group-hover:bg-[#D4AF37] group-hover:border-[#D4AF37] group-hover:shadow-[0_0_12px_#D4AF37] transition-colors duration-300" />
                 </div>
 
-                {/* Content (Right side of track) */}
                 <div className="ml-14 md:ml-12 pl-2">
-                  {/* Mobile Year */}
                   <div className="md:hidden mb-1.5">
                     <span className="text-[10px] font-mono tracking-[0.2em] text-[#D4AF37]">
                       {stop.year}
@@ -157,15 +147,15 @@ export const ExperienceSection: React.FC = () => {
                   >
                     {stop.title}
                   </h3>
-                  
-                  <span 
+
+                  <span
                     className="block text-[10px] font-medium tracking-[0.2em] uppercase text-[#8C6D4F] mb-2"
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
                   >
                     {stop.organization}
                   </span>
-                  
-                  <p 
+
+                  <p
                     className="text-xs sm:text-[13px] font-light text-[#A8988B] leading-[1.7] max-w-lg group-hover:text-[#D5CBC0] transition-colors"
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
                   >
