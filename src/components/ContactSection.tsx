@@ -68,6 +68,64 @@ export const ContactSection: React.FC = () => {
               >
                 Have an ambitious system to architect, an engineering opportunity, or a collaborative inquiry? Send a direct dispatch below.
               </p>
+
+              {/* Direct Contact Info */}
+              <div className="mt-10 space-y-3">
+                <div className="flex items-center space-x-3">
+                  <span className="text-[9.5px] font-mono tracking-[0.2em] uppercase text-[#8C6D4F] min-w-[80px]">
+                    EMAIL
+                  </span>
+                  <a
+                    href="mailto:your-email@example.com"
+                    className="text-[11px] font-light text-[#C4B5A5] hover:text-[#D4AF37] transition-colors"
+                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                  >
+                    your-email@example.com
+                  </a>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <span className="text-[9.5px] font-mono tracking-[0.2em] uppercase text-[#8C6D4F] min-w-[80px]">
+                    GITHUB
+                  </span>
+                  <a
+                    href="https://github.com/shubham-vishwakarma5606"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[11px] font-light text-[#C4B5A5] hover:text-[#D4AF37] transition-colors"
+                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                  >
+                    github.com/shubham-vishwakarma5606 ↗
+                  </a>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <span className="text-[9.5px] font-mono tracking-[0.2em] uppercase text-[#8C6D4F] min-w-[80px]">
+                    LINKEDIN
+                  </span>
+                  <a
+                    href="https://www.linkedin.com/in/your-username/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[11px] font-light text-[#C4B5A5] hover:text-[#D4AF37] transition-colors"
+                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                  >
+                    linkedin.com/in/your-username ↗
+                  </a>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <span className="text-[9.5px] font-mono tracking-[0.2em] uppercase text-[#8C6D4F] min-w-[80px]">
+                    LEETCODE
+                  </span>
+                  <a
+                    href="https://leetcode.com/u/your-username/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[11px] font-light text-[#C4B5A5] hover:text-[#D4AF37] transition-colors"
+                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                  >
+                    leetcode.com/u/your-username ↗
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -166,9 +224,38 @@ export const ContactSection: React.FC = () => {
 
         {/* System Footer Line */}
         <div className="pt-16 mt-16 border-t border-[#8C6D4F]/15 flex flex-col sm:flex-row items-center justify-between text-center sm:text-left gap-4">
-          <span className="text-[10px] font-mono tracking-widest text-[#8C6D4F] uppercase">
-            PORTFOLIO // EDITION 2026
-          </span>
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <span className="text-[10px] font-mono tracking-widest text-[#8C6D4F] uppercase">
+              PORTFOLIO // EDITION 2026
+            </span>
+            {/* Social Links */}
+            <div className="flex items-center space-x-4">
+              <a
+                href="https://github.com/shubham-vishwakarma5606"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[10px] font-mono tracking-wider text-[#8C6D4F] hover:text-[#D4AF37] transition-colors uppercase"
+              >
+                GitHub ↗
+              </a>
+              <span className="text-[#8C6D4F]/40">|</span>
+              <a
+                href="https://www.linkedin.com/in/your-username/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[10px] font-mono tracking-wider text-[#8C6D4F] hover:text-[#D4AF37] transition-colors uppercase"
+              >
+                LinkedIn ↗
+              </a>
+              <span className="text-[#8C6D4F]/40">|</span>
+              <a
+                href="mailto:your-email@example.com"
+                className="text-[10px] font-mono tracking-wider text-[#8C6D4F] hover:text-[#D4AF37] transition-colors uppercase"
+              >
+                Email ↗
+              </a>
+            </div>
+          </div>
           <span className="text-[10px] font-mono text-[#8C6D4F]">
             © {new Date().getFullYear()} • ENGINEERED WITH PRECISION
           </span>
