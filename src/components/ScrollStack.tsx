@@ -17,11 +17,15 @@ export const ScrollStackItem: React.FC<ScrollStackItemProps> = ({
 export interface ScrollStackProps {
   children: React.ReactNode;
   className?: string;
+  /** vertical gap between stacked card edges */
   itemDistance?: number;
+  /** how much each deeper card shrinks relative to the one in front */
   itemScale?: number;
+  /** downward offset between stacked cards (creates the deck look) */
   itemStackDistance?: number;
-  stackPosition?: string;
-  scaleEndPosition?: string;
+  /** how far down the viewport the deck starts (CSS % of height) */
+  stackPosition?: string | number;
+  scaleEndPosition?: string | number;
   baseScale?: number;
   scaleDuration?: number;
   rotationAmount?: number;
@@ -30,14 +34,18 @@ export interface ScrollStackProps {
   onStackComplete?: () => void;
 }
 
+/**
+ * "Descent" scroll stack — each card pins at the top of the viewport and then
+ * falls one-per-page toward the bottom of the section as the user scrolls,
+ * like descending into the depths. The front card is always the active one.
+ */
 const ScrollStack: React.FC<ScrollStackProps> = ({
   children,
   className = '',
-  itemDistance = 80,
-  itemScale = 0.03,
-  itemStackDistance = 32,
-  stackPosition = '15%',
-  scaleEndPosition = '8%',
+  itemDistance = 20,
+  itemScale = 0.035,
+  itemStackDistance = 30,
+  stackPosition = '12%',
   baseScale = 0.88,
   rotationAmount = 0,
   blurAmount = 0,
@@ -83,95 +91,87 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
 
   const updateCardTransforms = useCallback(() => {
     if (!cardsRef.current.length || isUpdatingRef.current) return;
-
     isUpdatingRef.current = true;
 
     const { scrollTop, containerHeight } = getScrollData();
     const stackPositionPx = parsePercentage(stackPosition, containerHeight);
-    const scaleEndPositionPx = parsePercentage(scaleEndPosition, containerHeight);
+    const pageHeight = containerHeight; // one full viewport per card = "by each page"
+    const bottomInset = containerHeight * 0.16;
+    const travel = containerHeight - stackPositionPx - bottomInset; // distance it falls
 
-    const endElement = useWindowScroll
-      ? (document.querySelector('.scroll-stack-end') as HTMLElement)
-      : (scrollerRef.current?.querySelector('.scroll-stack-end') as HTMLElement);
+    const sectionTop = initialTopsRef.current[0] || 0;
+    const sectionAnchor = sectionTop - stackPositionPx;
+    const n = cardsRef.current.length;
 
-    const endElementTop = endElement
-      ? endElement.getBoundingClientRect().top + window.scrollY
-      : 0;
+    let activeIndex = -1;
 
     cardsRef.current.forEach((card, i) => {
       if (!card) return;
-
       const cardTop = initialTopsRef.current[i] || 0;
-      const triggerStart = cardTop - stackPositionPx - itemStackDistance * i;
-      const triggerEnd = cardTop - scaleEndPositionPx;
-      const pinStart = cardTop - stackPositionPx - itemStackDistance * i;
-      const pinEnd = endElementTop - containerHeight / 2;
 
-      const scaleProgress = calculateProgress(scrollTop, triggerStart, triggerEnd);
+      // This card's descent happens within its own full page of scroll
+      const pageStart = sectionAnchor + i * pageHeight;
+      const pageEnd = sectionAnchor + (i + 1) * pageHeight;
+      const pageProgress = calculateProgress(scrollTop, pageStart, pageEnd);
+
+      // Pin the card to the top deck area regardless of scroll, then fall
+      const basePin = scrollTop - cardTop + stackPositionPx + itemStackDistance * i;
+      const translateY = basePin + pageProgress * travel;
+
+      // Shrink slightly as it falls into the depths
       const targetScale = baseScale + i * itemScale;
-      const scale = 1 - scaleProgress * (1 - targetScale);
-      const rotation = rotationAmount ? i * rotationAmount * scaleProgress : 0;
+      const scale = 1 - pageProgress * (1 - targetScale);
 
-      let blur = 0;
-      if (blurAmount) {
-        let topCardIndex = 0;
-        for (let j = 0; j < cardsRef.current.length; j++) {
-          const jCardTop = initialTopsRef.current[j] || 0;
-          const jTriggerStart = jCardTop - stackPositionPx - itemStackDistance * j;
-          if (scrollTop >= jTriggerStart) {
-            topCardIndex = j;
-          }
-        }
+      const rotation = rotationAmount ? i * rotationAmount * pageProgress : 0;
+      const blur = pageProgress * (blurAmount || 1.5);
+      const brightness = 1 - pageProgress * 0.32;
 
-        if (i < topCardIndex) {
-          const depthInStack = topCardIndex - i;
-          blur = Math.max(0, depthInStack * blurAmount);
-        }
-      }
-
-      let translateY = 0;
-      const isPinned = scrollTop >= pinStart && scrollTop <= pinEnd;
-
-      if (isPinned) {
-        translateY = scrollTop - cardTop + stackPositionPx + itemStackDistance * i;
-      } else if (scrollTop > pinEnd) {
-        translateY = pinEnd - cardTop + stackPositionPx + itemStackDistance * i;
-      }
+      if (pageProgress > 0 && pageProgress < 1) activeIndex = i;
 
       const newTransform = {
         translateY: Math.round(translateY * 100) / 100,
         scale: Math.round(scale * 1000) / 1000,
         rotation: Math.round(rotation * 100) / 100,
         blur: Math.round(blur * 100) / 100,
+        brightness: Math.round(brightness * 100) / 100,
+        glow: Math.round(pageProgress * 40),
       };
 
-      const lastTransform = lastTransformsRef.current.get(i);
+      const last = lastTransformsRef.current.get(i);
       const hasChanged =
-        !lastTransform ||
-        Math.abs(lastTransform.translateY - newTransform.translateY) > 0.1 ||
-        Math.abs(lastTransform.scale - newTransform.scale) > 0.001 ||
-        Math.abs(lastTransform.rotation - newTransform.rotation) > 0.1 ||
-        Math.abs(lastTransform.blur - newTransform.blur) > 0.1;
+        !last ||
+        Math.abs(last.translateY - newTransform.translateY) > 0.1 ||
+        Math.abs(last.scale - newTransform.scale) > 0.001 ||
+        Math.abs(last.rotation - newTransform.rotation) > 0.1 ||
+        Math.abs(last.blur - newTransform.blur) > 0.1 ||
+        Math.abs(last.brightness - newTransform.brightness) > 0.01 ||
+        Math.abs(last.glow - newTransform.glow) > 1;
 
       if (hasChanged) {
-        const transform = `translate3d(0, ${newTransform.translateY}px, 0) scale(${newTransform.scale}) rotate(${newTransform.rotation}deg)`;
-        const filter = newTransform.blur > 0 ? `blur(${newTransform.blur}px)` : '';
-
-        card.style.transform = transform;
-        card.style.filter = filter;
-
+        card.style.transform = `translate3d(0, ${newTransform.translateY}px, 0) scale(${newTransform.scale}) rotate(${newTransform.rotation}deg)`;
+        card.style.filter = `blur(${newTransform.blur}px) brightness(${newTransform.brightness})`;
+        card.style.boxShadow = `0 ${newTransform.glow}px ${newTransform.glow * 1.6}px rgba(196,30,58,${Math.min(
+          0.5,
+          newTransform.glow * 0.012
+        )})`;
         lastTransformsRef.current.set(i, newTransform);
       }
 
-      if (i === cardsRef.current.length - 1) {
-        const isInView = scrollTop >= pinStart && scrollTop <= pinEnd;
-        if (isInView && !stackCompletedRef.current) {
+      // Last card finishing its fall = the stack descent is complete
+      if (i === n - 1) {
+        const complete = pageProgress >= 1;
+        if (complete && !stackCompletedRef.current) {
           stackCompletedRef.current = true;
           onStackComplete?.();
-        } else if (!isInView && stackCompletedRef.current) {
+        } else if (!complete && stackCompletedRef.current) {
           stackCompletedRef.current = false;
         }
       }
+    });
+
+    // Front (active, falling) card is always on top
+    cardsRef.current.forEach((card, i) => {
+      card.style.zIndex = i === activeIndex ? '100' : `${n - i}`;
     });
 
     isUpdatingRef.current = false;
@@ -179,7 +179,6 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
     itemScale,
     itemStackDistance,
     stackPosition,
-    scaleEndPosition,
     baseScale,
     rotationAmount,
     blurAmount,
@@ -230,16 +229,21 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
     });
 
     cards.forEach((card, i) => {
-      card.style.zIndex = `${i + 1}`;
+      card.style.zIndex = `${cards.length - i}`;
       if (i < cards.length - 1) {
         card.style.marginBottom = `${itemDistance}px`;
       }
-      card.style.willChange = 'transform, filter';
+      card.style.willChange = 'transform, filter, box-shadow';
       card.style.transformOrigin = 'top center';
       card.style.backfaceVisibility = 'hidden';
-      card.style.transform = 'translateZ(0)';
       card.style.perspective = '1000px';
     });
+
+    // Runway so every card gets a full page of scroll to descend
+    const inner = scrollerRef.current?.querySelector('.scroll-stack-inner');
+    if (inner) {
+      (inner as HTMLElement).style.paddingBottom = `${cards.length * 100}vh`;
+    }
 
     setupLenis();
     updateCardTransforms();
@@ -262,7 +266,6 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
     itemScale,
     itemStackDistance,
     stackPosition,
-    scaleEndPosition,
     baseScale,
     rotationAmount,
     blurAmount,
