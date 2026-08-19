@@ -44,7 +44,7 @@ export const AboutSection: React.FC = () => {
   // 3. Top-Level Unconditional Transform for Spotlight Background
   const spotlightBg = useTransform(
     [spotlightX, spotlightY],
-    ([x, y]) => `radial-gradient(circle 240px at ${x}px ${y}px, rgba(255,255,255,0.35), rgba(212,175,55,0.18), transparent 80%)`
+    ([x, y]) => `radial-gradient(circle 240px at ${x}px ${y}px, rgba(255,255,255,0.35), rgba(196,30,58,0.18), transparent 80%)`
   );
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -69,18 +69,18 @@ export const AboutSection: React.FC = () => {
   return (
     <section 
       id="about" 
-      className="relative w-screen min-h-screen bg-black text-[#E8DFD8] font-sans selection:bg-[#cbb59d] selection:text-black py-24 lg:py-32 px-6 sm:px-12 lg:px-20 overflow-hidden flex items-center"
+      className="relative w-screen min-h-screen bg-black text-[#E8DFD8] font-sans selection:bg-[#C41E3A] selection:text-[#F2EDE8] py-24 lg:py-32 px-6 sm:px-12 lg:px-20 overflow-hidden flex items-center"
     >
       {/* ================= BACKGROUND GLOWS & FLOATING PARTICLES ================= */}
       <motion.div 
         animate={{ scale: [1, 1.2, 1], opacity: [0.08, 0.16, 0.08] }}
         transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute top-1/4 left-1/6 w-[32rem] h-[32rem] bg-[#D4AF37] rounded-full blur-[160px] pointer-events-none"
+        className="absolute top-1/4 left-1/6 w-[32rem] h-[32rem] bg-[#C41E3A] rounded-full blur-[160px] pointer-events-none"
       />
       <motion.div 
         animate={{ scale: [1.2, 1, 1.2], opacity: [0.05, 0.12, 0.05] }}
         transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute bottom-1/6 right-1/4 w-[28rem] h-[28rem] bg-[#8C6D4F] rounded-full blur-[170px] pointer-events-none"
+        className="absolute bottom-1/6 right-1/4 w-[28rem] h-[28rem] bg-[#5A1F2C] rounded-full blur-[170px] pointer-events-none"
       />
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
@@ -94,12 +94,12 @@ export const AboutSection: React.FC = () => {
           className="flex items-center space-x-4 mb-10"
         >
           <span 
-            className="text-[11px] font-medium tracking-[0.35em] uppercase text-[#D4AF37]"
+            className="text-[11px] font-medium tracking-[0.35em] uppercase text-[#C41E3A]"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             01 / ABOUT ME
           </span>
-          <div className="w-20 h-[1px] bg-gradient-to-r from-[#D4AF37]/80 via-[#8C6D4F]/40 to-transparent" />
+          <div className="w-20 h-[1px] bg-gradient-to-r from-[#C41E3A]/80 via-[#5A1F2C]/40 to-transparent" />
         </motion.div>
 
         {/* Main Grid: Content + Portrait */}
@@ -119,10 +119,10 @@ export const AboutSection: React.FC = () => {
                 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.4rem] tracking-tight uppercase leading-[0.88]"
                 style={{ fontFamily: "'Bebas Neue', sans-serif" }}
               >
-                <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#D5CBC0] to-[#605448] drop-shadow-[0_4px_10px_rgba(0,0,0,0.85)]">
+                <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#C8BDB4] to-[#3A3030] drop-shadow-[0_4px_10px_rgba(0,0,0,0.85)]">
                   I DON'T JUST WRITE CODE.
                 </span>
-                <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#F7E7C4] via-[#C99E5D] to-[#543B1A] drop-shadow-[0_8px_25px_rgba(201,158,93,0.3)]">
+                <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#E8DFD8] via-[#B03A48] to-[#3A0F14] drop-shadow-[0_8px_25px_rgba(176,58,72,0.3)]">
                   I BUILD WHAT'S NEXT.
                 </span>
               </h2>
@@ -131,61 +131,61 @@ export const AboutSection: React.FC = () => {
             {/* Concise Bio Paragraph */}
             <motion.p
               variants={fadeUpVariants}
-              className="text-xs sm:text-sm md:text-[14.5px] font-light text-[#B3A497] leading-[1.85] tracking-wide mb-10 max-w-xl"
+              className="text-xs sm:text-sm md:text-[14.5px] font-light text-[#A89C96] leading-[1.85] tracking-wide mb-10 max-w-xl"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
-              I'm <span className="text-[#F3DBB3] font-medium">Shubham Vishwakarma</span> — a cybersecurity enthusiast and open-source builder behind the <span className="text-[#D4AF37] font-medium">CyberS3an</span> ecosystem. I design defensive tools (WAFs, awareness simulations, defensive utilities) and explore offensive security through controlled research. My work sits at the intersection of red-team thinking and blue-team engineering.
+              I'm <span className="text-[#E8DFD8] font-medium">Shubham Vishwakarma</span> — a cybersecurity enthusiast and open-source builder behind the <span className="text-[#C41E3A] font-medium">CyberS3an</span> ecosystem. I design defensive tools (WAFs, awareness simulations, defensive utilities) and explore offensive security through controlled research. My work sits at the intersection of red-team thinking and blue-team engineering.
             </motion.p>
 
             {/* 4-Item Achievement Metrics — derived from GitHub */}
             <motion.div 
               variants={fadeUpVariants}
-              className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 pb-2 border-t border-[#8C6D4F]/25"
+              className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 pb-2 border-t border-[#5A1F2C]/25"
             >
               <div className="flex flex-col">
                 <span 
-                  className="text-3xl sm:text-4xl font-light text-[#F4EBE2] tracking-tight"
+                  className="text-3xl sm:text-4xl font-light text-[#E4DCD5] tracking-tight"
                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
                   8+
                 </span>
-                <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-[#A8988B] mt-0.5">
+                <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-[#9C8F8A] mt-0.5">
                   Security Projects
                 </span>
               </div>
 
               <div className="flex flex-col">
                 <span 
-                  className="text-3xl sm:text-4xl font-light text-[#D4AF37] tracking-tight"
+                  className="text-3xl sm:text-4xl font-light text-[#C41E3A] tracking-tight"
                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
                   Since '23
                 </span>
-                <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-[#A8988B] mt-0.5">
+                <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-[#9C8F8A] mt-0.5">
                   Building in Cyber
                 </span>
               </div>
 
               <div className="flex flex-col">
                 <span 
-                  className="text-3xl sm:text-4xl font-light text-[#F4EBE2] tracking-tight"
+                  className="text-3xl sm:text-4xl font-light text-[#E4DCD5] tracking-tight"
                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
                   100%
                 </span>
-                <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-[#A8988B] mt-0.5">
+                <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-[#9C8F8A] mt-0.5">
                   Open Source
                 </span>
               </div>
 
               <div className="flex flex-col">
                 <span 
-                  className="text-3xl sm:text-4xl font-light text-[#D4AF37] tracking-tight"
+                  className="text-3xl sm:text-4xl font-light text-[#C41E3A] tracking-tight"
                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
                   Red+Blue
                 </span>
-                <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-[#A8988B] mt-0.5">
+                <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-[#9C8F8A] mt-0.5">
                   Defensive + Offensive
                 </span>
               </div>
@@ -195,15 +195,30 @@ export const AboutSection: React.FC = () => {
           {/* ================= RIGHT PORTRAIT FRAME (PERFECT LOCKED GEOMETRY) ================= */}
           <div className="lg:col-span-5 flex items-center justify-center relative perspective-[1400px]">
             
-            {/* Ambient Animated Gold Glow Ring Behind Frame */}
-            <motion.div 
+            {/* Ambient Animated Gothic Glow Ring Behind Frame — always in slow motion */}
+            <motion.div
               animate={{
-                scale: isCardHovered ? 1.15 : 1,
-                opacity: isCardHovered ? 0.35 : 0.15,
-                rotate: isCardHovered ? 180 : 0
+                rotate: [0, 360],
+                scale: isCardHovered ? [1, 1.22, 1] : [1, 1.08, 1],
+                opacity: isCardHovered ? [0.18, 0.42, 0.18] : [0.1, 0.22, 0.1],
               }}
-              transition={{ duration: 3, ease: "easeOut" }}
-              className="absolute -inset-6 bg-[conic-gradient(from_0deg,#D4AF37_0%,#8C6D4F_30%,transparent_60%,#D4AF37_100%)] blur-2xl rounded-3xl pointer-events-none"
+              transition={{
+                rotate: { duration: 26, repeat: Infinity, ease: 'linear' },
+                scale: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
+                opacity: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
+              }}
+              className="absolute -inset-6 bg-[conic-gradient(from_0deg,#C41E3A_0%,#5A1F2C_30%,transparent_60%,#C41E3A_100%)] blur-2xl rounded-3xl pointer-events-none"
+            />
+
+            {/* Faint smoky second ring for depth */}
+            <motion.div
+              animate={{ rotate: [0, -360], scale: [1.1, 0.95, 1.1], opacity: [0.06, 0.16, 0.06] }}
+              transition={{
+                rotate: { duration: 34, repeat: Infinity, ease: 'linear' },
+                scale: { duration: 7, repeat: Infinity, ease: 'easeInOut' },
+                opacity: { duration: 7, repeat: Infinity, ease: 'easeInOut' },
+              }}
+              className="absolute -inset-12 bg-[conic-gradient(from_180deg,#5A1F2C_0%,transparent_50%,#C41E3A_80%)] blur-2xl rounded-full pointer-events-none"
             />
 
             {/* Drifting Gold Spark Embers on Hover */}
@@ -213,17 +228,23 @@ export const AboutSection: React.FC = () => {
                   initial={{ opacity: 0, y: 10, x: -20 }}
                   animate={{ opacity: [0, 1, 0], y: -50, x: -30 }}
                   transition={{ duration: 2, repeat: Infinity, ease: 'easeOut' }}
-                  className="absolute top-1/4 -left-6 w-1.5 h-1.5 bg-[#F3DBB3] rounded-full blur-[1px] shadow-[0_0_8px_#D4AF37] pointer-events-none z-30"
+                  className="absolute top-1/4 -left-6 w-1.5 h-1.5 bg-[#E8DFD8] rounded-full blur-[1px] shadow-[0_0_8px_#C41E3A] pointer-events-none z-30"
                 />
                 <motion.div
                   initial={{ opacity: 0, y: 20, x: 20 }}
                   animate={{ opacity: [0, 1, 0], y: -60, x: 40 }}
                   transition={{ duration: 2.4, repeat: Infinity, ease: 'easeOut', delay: 0.3 }}
-                  className="absolute bottom-1/3 -right-6 w-2 h-2 bg-[#D4AF37] rounded-full blur-[1px] shadow-[0_0_10px_#D4AF37] pointer-events-none z-30"
+                  className="absolute bottom-1/3 -right-6 w-2 h-2 bg-[#C41E3A] rounded-full blur-[1px] shadow-[0_0_10px_#C41E3A] pointer-events-none z-30"
                 />
               </>
             )}
 
+            {/* ================= PERPETUAL FLOAT WRAPPER (idle motion) ================= */}
+            <motion.div
+              animate={{ y: [0, -12, 0], rotateZ: [-0.7, 0.7, -0.7] }}
+              transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+              className="relative"
+            >
             {/* 3D Holographic Main Card Container */}
             <motion.div
               ref={cardRef}
@@ -235,23 +256,23 @@ export const AboutSection: React.FC = () => {
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-              className="relative p-3.5 border border-[#8C6D4F]/40 rounded-sm bg-[#120F0C]/80 backdrop-blur-xl shadow-[0_25px_70px_rgba(0,0,0,0.95)] cursor-pointer group transition-colors duration-500 hover:border-[#D4AF37]/80"
+              className="relative p-3.5 border border-[#5A1F2C]/40 rounded-sm bg-[#140A0E]/80 backdrop-blur-xl shadow-[0_25px_70px_rgba(0,0,0,0.95)] cursor-pointer group transition-colors duration-500 hover:border-[#C41E3A]/80"
             >
               {/* Dynamic Laser Border Pulse on Card Perimeter */}
               <div className="absolute inset-0 rounded-sm pointer-events-none overflow-hidden">
                 <motion.div 
                   animate={{ x: isCardHovered ? ['-100%', '200%'] : '-100%' }}
                   transition={{ duration: 1.8, repeat: Infinity, ease: 'linear' }}
-                  className="w-1/2 h-full bg-gradient-to-r from-transparent via-[#D4AF37]/30 to-transparent skew-x-12"
+                  className="w-1/2 h-full bg-gradient-to-r from-transparent via-[#C41E3A]/30 to-transparent skew-x-12"
                 />
               </div>
 
               {/* Locked Corner Gold Accent Brackets */}
               <div className="pointer-events-none">
-                <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#D4AF37] transition-transform duration-500 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 shadow-[0_0_10px_rgba(212,175,55,0.4)]" />
-                <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-[#D4AF37] transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shadow-[0_0_10px_rgba(212,175,55,0.4)]" />
-                <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-[#D4AF37] transition-transform duration-500 group-hover:-translate-x-0.5 group-hover:translate-y-0.5 shadow-[0_0_10px_rgba(212,175,55,0.4)]" />
-                <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#D4AF37] transition-transform duration-500 group-hover:translate-x-0.5 group-hover:translate-y-0.5 shadow-[0_0_10px_rgba(212,175,55,0.4)]" />
+                <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#C41E3A] transition-transform duration-500 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 shadow-[0_0_10px_rgba(196,30,58,0.4)]" />
+                <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-[#C41E3A] transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shadow-[0_0_10px_rgba(196,30,58,0.4)]" />
+                <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-[#C41E3A] transition-transform duration-500 group-hover:-translate-x-0.5 group-hover:translate-y-0.5 shadow-[0_0_10px_rgba(196,30,58,0.4)]" />
+                <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#C41E3A] transition-transform duration-500 group-hover:translate-x-0.5 group-hover:translate-y-0.5 shadow-[0_0_10px_rgba(196,30,58,0.4)]" />
               </div>
 
               {/* Portrait Image Canvas */}
@@ -278,13 +299,14 @@ export const AboutSection: React.FC = () => {
                 {/* Monoline Signature */}
                 <div className="absolute bottom-4 right-4 z-20 select-none">
                   <span 
-                    className="text-3xl text-[#F2D8A7] drop-shadow-[0_0_12px_rgba(242,216,167,0.5)] transition-colors duration-300 group-hover:text-white"
+                    className="text-3xl text-[#E4DCD5] drop-shadow-[0_0_12px_rgba(232,223,216,0.5)] transition-colors duration-300 group-hover:text-white"
                     style={{ fontFamily: "'Herr Von Muellerhoff', cursive" }}
                   >
                     Shubham
                   </span>
                 </div>
               </div>
+            </motion.div>
             </motion.div>
           </div>
 

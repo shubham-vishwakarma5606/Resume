@@ -64,9 +64,9 @@ export const ExperienceSection: React.FC = () => {
     <section
       id="experience"
       ref={containerRef}
-      className="relative w-full bg-black text-[#E8DFD8] font-sans selection:bg-[#cbb59d] selection:text-black pt-4 pb-24 px-6 sm:px-12 lg:px-20 overflow-hidden"
+      className="relative w-full bg-black text-[#E8DFD8] font-sans selection:bg-[#C41E3A] selection:text-[#F2EDE8] pt-4 pb-24 px-6 sm:px-12 lg:px-20 overflow-hidden"
     >
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-[#D4AF37]/[0.03] rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-[#C41E3A]/[0.03] rounded-full blur-[150px] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto w-full relative z-10">
         <motion.div
@@ -77,12 +77,12 @@ export const ExperienceSection: React.FC = () => {
           className="flex items-center space-x-4 mb-7"
         >
           <span
-            className="text-[11px] font-medium tracking-[0.35em] uppercase text-[#D4AF37]"
+            className="text-[11px] font-medium tracking-[0.35em] uppercase text-[#C41E3A]"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             04 / JOURNEY
           </span>
-          <div className="w-20 h-[1px] bg-gradient-to-r from-[#D4AF37]/80 via-[#8C6D4F]/40 to-transparent" />
+          <div className="w-20 h-[1px] bg-gradient-to-r from-[#C41E3A]/80 via-[#5A1F2C]/40 to-transparent" />
         </motion.div>
 
         <motion.div
@@ -96,21 +96,21 @@ export const ExperienceSection: React.FC = () => {
             className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight uppercase leading-[0.85] select-none"
             style={{ fontFamily: "'Bebas Neue', sans-serif" }}
           >
-            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#D5CBC0] to-[#605448] drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#C8BDB4] to-[#3A3030] drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
               CYBERS3AN
             </span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#F7E7C4] via-[#C99E5D] to-[#543B1A] drop-shadow-[0_8px_25px_rgba(201,158,93,0.35)]">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#E8DFD8] via-[#B03A48] to-[#3A0F14] drop-shadow-[0_8px_25px_rgba(176,58,72,0.35)]">
               TIMELINE.
             </span>
           </h2>
         </motion.div>
 
         <div className="relative w-full">
-          <div className="absolute left-[19px] md:left-[140px] top-4 bottom-8 w-[1px] bg-[#8C6D4F]/20" />
+          <div className="absolute left-[19px] md:left-[140px] top-4 bottom-8 w-[1px] bg-[#5A1F2C]/20" />
 
           <motion.div
             style={{ height: lineHeight }}
-            className="absolute left-[19px] md:left-[140px] top-4 w-[2px] bg-gradient-to-b from-[#D4AF37] via-[#C99E5D] to-[#8C6D4F]/10 shadow-[0_0_10px_#D4AF37] origin-top"
+            className="absolute left-[19px] md:left-[140px] top-4 w-[2px] bg-gradient-to-b from-[#C41E3A] via-[#B03A48] to-[#5A1F2C]/10 shadow-[0_0_10px_#C41E3A] origin-top"
           />
 
           <div className="space-y-12">
@@ -124,39 +124,39 @@ export const ExperienceSection: React.FC = () => {
                 className="relative flex flex-col md:flex-row items-start group"
               >
                 <div className="hidden md:block w-[140px] shrink-0 pr-8 pt-0.5 text-right">
-                  <span className="text-[10px] font-mono tracking-[0.2em] text-[#8C6D4F] group-hover:text-[#D4AF37] transition-colors">
+                  <span className="text-[10px] font-mono tracking-[0.2em] text-[#5A1F2C] group-hover:text-[#C41E3A] transition-colors">
                     {stop.year}
                   </span>
                 </div>
 
                 <div className="absolute left-[19px] md:left-[140px] top-1.5 -translate-x-1/2 flex items-center justify-center">
-                  <div className="absolute w-6 h-6 rounded-full border border-[#D4AF37]/0 group-hover:border-[#D4AF37]/40 group-hover:scale-150 transition-all duration-700 ease-out" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-[#120F0C] border border-[#8C6D4F] group-hover:bg-[#D4AF37] group-hover:border-[#D4AF37] group-hover:shadow-[0_0_12px_#D4AF37] transition-colors duration-300" />
+                  <div className="absolute w-6 h-6 rounded-full border border-[#C41E3A]/0 group-hover:border-[#C41E3A]/40 group-hover:scale-150 transition-all duration-700 ease-out" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#140A0E] border border-[#5A1F2C] group-hover:bg-[#C41E3A] group-hover:border-[#C41E3A] group-hover:shadow-[0_0_12px_#C41E3A] transition-colors duration-300" />
                 </div>
 
                 <div className="ml-14 md:ml-12 pl-2">
                   <div className="md:hidden mb-1.5">
-                    <span className="text-[10px] font-mono tracking-[0.2em] text-[#D4AF37]">
+                    <span className="text-[10px] font-mono tracking-[0.2em] text-[#C41E3A]">
                       {stop.year}
                     </span>
                   </div>
 
                   <h3
-                    className="text-3xl sm:text-4xl tracking-wide text-white group-hover:text-[#F7E7C4] transition-colors mb-1 leading-none"
+                    className="text-3xl sm:text-4xl tracking-wide text-white group-hover:text-[#E8DFD8] transition-colors mb-1 leading-none"
                     style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                   >
                     {stop.title}
                   </h3>
 
                   <span
-                    className="block text-[10px] font-medium tracking-[0.2em] uppercase text-[#8C6D4F] mb-2"
+                    className="block text-[10px] font-medium tracking-[0.2em] uppercase text-[#5A1F2C] mb-2"
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
                   >
                     {stop.organization}
                   </span>
 
                   <p
-                    className="text-xs sm:text-[13px] font-light text-[#A8988B] leading-[1.7] max-w-lg group-hover:text-[#D5CBC0] transition-colors"
+                    className="text-xs sm:text-[13px] font-light text-[#9C8F8A] leading-[1.7] max-w-lg group-hover:text-[#C8BDB4] transition-colors"
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
                   >
                     {stop.description}

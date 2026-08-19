@@ -182,10 +182,10 @@ export const ProjectsSection: React.FC = () => {
   return (
     <section
       id="work"
-      className="relative w-full bg-black text-[#E8DFD8] font-sans selection:bg-[#cbb59d] selection:text-black pt-20 pb-32 px-6 sm:px-12 lg:px-20"
+      className="relative w-full bg-black text-[#E8DFD8] font-sans selection:bg-[#C41E3A] selection:text-[#F2EDE8] pt-20 pb-32 px-6 sm:px-12 lg:px-20"
     >
-      <div className="absolute top-1/4 left-1/3 w-[36rem] h-[36rem] bg-[#D4AF37]/5 rounded-full blur-[180px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-[#8C6D4F]/5 rounded-full blur-[170px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/3 w-[36rem] h-[36rem] bg-[#C41E3A]/5 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-[#5A1F2C]/5 rounded-full blur-[170px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <motion.div
@@ -196,12 +196,12 @@ export const ProjectsSection: React.FC = () => {
           className="flex items-center space-x-4 mb-5"
         >
           <span
-            className="text-[11px] font-medium tracking-[0.35em] uppercase text-[#D4AF37]"
+            className="text-[11px] font-medium tracking-[0.35em] uppercase text-[#C41E3A]"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             02 / FEATURED WORK
           </span>
-          <div className="w-20 h-[1px] bg-gradient-to-r from-[#D4AF37]/80 via-[#8C6D4F]/40 to-transparent" />
+          <div className="w-20 h-[1px] bg-gradient-to-r from-[#C41E3A]/80 via-[#5A1F2C]/40 to-transparent" />
         </motion.div>
 
         <motion.div
@@ -215,16 +215,16 @@ export const ProjectsSection: React.FC = () => {
             className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight uppercase leading-[0.85] select-none"
             style={{ fontFamily: "'Bebas Neue', sans-serif" }}
           >
-            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#D5CBC0] to-[#605448] drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#C8BDB4] to-[#3A3030] drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
               BUILT &amp; SHIPPED.
             </span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#F7E7C4] via-[#C99E5D] to-[#543B1A] drop-shadow-[0_8px_25px_rgba(201,158,93,0.35)]">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#E8DFD8] via-[#B03A48] to-[#3A0F14] drop-shadow-[0_8px_25px_rgba(176,58,72,0.35)]">
               CYBERS3AN STACK.
             </span>
           </h2>
 
           <p
-            className="text-xs sm:text-sm font-light text-[#A8988B] max-w-sm mt-4 md:mt-0 leading-relaxed"
+            className="text-xs sm:text-sm font-light text-[#9C8F8A] max-w-sm mt-4 md:mt-0 leading-relaxed"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             Every repo on the GitHub, plus a few upcoming topics in the pipeline. Scroll to unfold the full stack.
@@ -245,19 +245,19 @@ export const ProjectsSection: React.FC = () => {
               <div
                 className={`relative w-full rounded-2xl border ${
                   project.upcoming
-                    ? 'border-[#D4AF37]/40 bg-[#0E0C0A]'
-                    : 'border-[#8C6D4F]/50 bg-[#0E0C0A]'
-                } p-8 sm:p-12 shadow-[0_25px_70px_rgba(0,0,0,0.98)] group overflow-hidden transition-colors duration-500 hover:border-[#D4AF37]`}
+                    ? 'border-[#C41E3A]/40 bg-[#0C080B]'
+                    : 'border-[#5A1F2C]/50 bg-[#0C080B]'
+                } p-8 sm:p-12 shadow-[0_25px_70px_rgba(0,0,0,0.98)] group overflow-hidden transition-colors duration-500 hover:border-[#C41E3A]`}
               >
-                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/80 to-transparent" />
+                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#C41E3A]/80 to-transparent" />
 
-                <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[#D4AF37]/60 group-hover:border-[#D4AF37] transition-colors" />
-                <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-[#D4AF37]/60 group-hover:border-[#D4AF37] transition-colors" />
-                <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-[#D4AF37]/60 group-hover:border-[#D4AF37] transition-colors" />
-                <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[#D4AF37]/60 group-hover:border-[#D4AF37] transition-colors" />
+                <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[#C41E3A]/60 group-hover:border-[#C41E3A] transition-colors" />
+                <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-[#C41E3A]/60 group-hover:border-[#C41E3A] transition-colors" />
+                <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-[#C41E3A]/60 group-hover:border-[#C41E3A] transition-colors" />
+                <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[#C41E3A]/60 group-hover:border-[#C41E3A] transition-colors" />
 
                 <span
-                  className="absolute -bottom-6 -right-3 text-8xl sm:text-9xl font-bold text-[#EAD8C7]/5 select-none pointer-events-none leading-none"
+                  className="absolute -bottom-6 -right-3 text-8xl sm:text-9xl font-bold text-[#D9D0C8]/5 select-none pointer-events-none leading-none"
                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
                   {project.number}
@@ -267,34 +267,34 @@ export const ProjectsSection: React.FC = () => {
                   <div className="lg:col-span-7 flex flex-col justify-between">
                     <div>
                       <div className="flex items-center space-x-3 mb-4">
-                        <span className={`text-xs font-mono font-bold ${project.upcoming ? 'text-[#C99E5D]' : 'text-[#D4AF37]'}`}>
+                        <span className={`text-xs font-mono font-bold ${project.upcoming ? 'text-[#B03A48]' : 'text-[#C41E3A]'}`}>
                           {project.number} //
                         </span>
-                        <span className="text-[10.5px] font-mono tracking-[0.25em] uppercase text-[#A8988B]">
+                        <span className="text-[10.5px] font-mono tracking-[0.25em] uppercase text-[#9C8F8A]">
                           {project.category}
                         </span>
                       </div>
 
                       <h3
-                        className="text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-white mb-4 group-hover:text-[#F7E7C4] transition-colors uppercase leading-[0.9]"
+                        className="text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-white mb-4 group-hover:text-[#E8DFD8] transition-colors uppercase leading-[0.9]"
                         style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                       >
                         {project.title}
                       </h3>
 
                       <p
-                        className="text-xs sm:text-sm md:text-[14px] font-light text-[#BDB0A4] leading-[1.85] tracking-wide mb-8 max-w-2xl"
+                        className="text-xs sm:text-sm md:text-[14px] font-light text-[#B0A49E] leading-[1.85] tracking-wide mb-8 max-w-2xl"
                         style={{ fontFamily: "'Montserrat', sans-serif" }}
                       >
                         {project.description}
                       </p>
                     </div>
 
-                    <div className="flex flex-wrap gap-2 pt-6 border-t border-[#8C6D4F]/25">
+                    <div className="flex flex-wrap gap-2 pt-6 border-t border-[#5A1F2C]/25">
                       {project.tech.map((t) => (
                         <span
                           key={t}
-                          className="px-3 py-1 text-[10px] font-medium tracking-[0.16em] uppercase rounded-sm border border-[#8C6D4F]/40 bg-[#16120E] text-[#E8D7C5] group-hover:border-[#D4AF37]/50 transition-all duration-300"
+                          className="px-3 py-1 text-[10px] font-medium tracking-[0.16em] uppercase rounded-sm border border-[#5A1F2C]/40 bg-[#1A1013] text-[#D9D0C8] group-hover:border-[#C41E3A]/50 transition-all duration-300"
                           style={{ fontFamily: "'Montserrat', sans-serif" }}
                         >
                           {t}
@@ -303,20 +303,20 @@ export const ProjectsSection: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-6 lg:pl-6 lg:border-l lg:border-[#8C6D4F]/25">
+                  <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-6 lg:pl-6 lg:border-l lg:border-[#5A1F2C]/25">
                     <div className="space-y-3">
-                      <span className="text-[9.5px] font-mono tracking-[0.25em] uppercase text-[#8C6D4F] block mb-2">
+                      <span className="text-[9.5px] font-mono tracking-[0.25em] uppercase text-[#5A1F2C] block mb-2">
                         // METRICS
                       </span>
                       {project.metrics.map((m) => (
                         <div
                           key={m.label}
-                          className="p-3.5 rounded-sm border border-[#8C6D4F]/25 bg-[#050403] flex items-center justify-between"
+                          className="p-3.5 rounded-sm border border-[#5A1F2C]/25 bg-[#080405] flex items-center justify-between"
                         >
-                          <span className="text-[10px] font-mono text-[#A8988B]">
+                          <span className="text-[10px] font-mono text-[#9C8F8A]">
                             {m.label}
                           </span>
-                          <span className="text-[11px] font-mono font-medium text-[#F7E7C4]">
+                          <span className="text-[11px] font-mono font-medium text-[#E8DFD8]">
                             {m.value}
                           </span>
                         </div>
@@ -327,7 +327,7 @@ export const ProjectsSection: React.FC = () => {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center space-x-3 px-6 py-3.5 border border-[#8C6D4F] bg-[#16120E] hover:border-[#D4AF37] hover:bg-[#D4AF37] text-[#EAD8C7] hover:text-black text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.1)]"
+                      className="inline-flex items-center justify-center space-x-3 px-6 py-3.5 border border-[#5A1F2C] bg-[#1A1013] hover:border-[#C41E3A] hover:bg-[#C41E3A] text-[#D9D0C8] hover:text-black text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 shadow-[0_0_20px_rgba(196,30,58,0.1)]"
                       style={{ fontFamily: "'Montserrat', sans-serif" }}
                     >
                       <span>{project.upcoming ? 'TRACK PROGRESS' : 'VIEW ON GITHUB'}</span>

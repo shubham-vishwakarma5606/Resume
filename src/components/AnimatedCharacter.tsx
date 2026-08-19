@@ -40,9 +40,9 @@ export const AnimatedCharacter: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-full overflow-hidden rounded-sm border border-[#8C6D4F]/45 bg-[#0A0806] shadow-[0_25px_70px_rgba(0,0,0,0.95)]">
+    <div className="relative w-full h-full overflow-hidden rounded-sm border border-[#5A1F2C]/45 bg-[#090609] shadow-[0_25px_70px_rgba(0,0,0,0.95)]">
       {/* Ambient gold radial glow behind everything */}
-      <div className="absolute -inset-12 bg-[radial-gradient(circle_at_center,#D4AF37_0%,transparent_55%)] opacity-25 blur-2xl pointer-events-none" />
+      <div className="absolute -inset-12 bg-[radial-gradient(circle_at_center,#C41E3A_0%,transparent_55%)] opacity-25 blur-2xl pointer-events-none" />
 
       {/* Character image — hidden during boot, revealed with filter + scan */}
       <motion.div
@@ -81,7 +81,7 @@ export const AnimatedCharacter: React.FC = () => {
             className="absolute inset-x-0 h-1/3 pointer-events-none z-20 mix-blend-screen"
             style={{
               background:
-                'linear-gradient(to bottom, transparent 0%, rgba(212,175,55,0.6) 50%, transparent 100%)',
+                'linear-gradient(to bottom, transparent 0%, rgba(196,30,58,0.6) 50%, transparent 100%)',
             }}
           />
         )}
@@ -98,7 +98,7 @@ export const AnimatedCharacter: React.FC = () => {
             className="absolute inset-0 z-30 flex flex-col justify-end p-5 sm:p-7 bg-black/80 backdrop-blur-[2px] pointer-events-none"
             style={{ fontFamily: "'Courier New', monospace" }}
           >
-            <div className="text-[10.5px] sm:text-[12.5px] leading-[1.75] text-[#D4AF37] tracking-[0.04em]">
+            <div className="text-[10.5px] sm:text-[12.5px] leading-[1.75] text-[#C41E3A] tracking-[0.04em]">
               {bootLines.slice(0, count).map((line, i) => (
                 <motion.div
                   key={i}
@@ -130,10 +130,10 @@ export const AnimatedCharacter: React.FC = () => {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="absolute inset-0 pointer-events-none"
           >
-            <div className="absolute top-3 left-3 w-6 h-6 border-t-2 border-l-2 border-[#D4AF37] shadow-[0_0_10px_rgba(212,175,55,0.5)]" />
-            <div className="absolute top-3 right-3 w-6 h-6 border-t-2 border-r-2 border-[#D4AF37] shadow-[0_0_10px_rgba(212,175,55,0.5)]" />
-            <div className="absolute bottom-3 left-3 w-6 h-6 border-b-2 border-l-2 border-[#D4AF37] shadow-[0_0_10px_rgba(212,175,55,0.5)]" />
-            <div className="absolute bottom-3 right-3 w-6 h-6 border-b-2 border-r-2 border-[#D4AF37] shadow-[0_0_10px_rgba(212,175,55,0.5)]" />
+            <div className="absolute top-3 left-3 w-6 h-6 border-t-2 border-l-2 border-[#C41E3A] shadow-[0_0_10px_rgba(196,30,58,0.5)]" />
+            <div className="absolute top-3 right-3 w-6 h-6 border-t-2 border-r-2 border-[#C41E3A] shadow-[0_0_10px_rgba(196,30,58,0.5)]" />
+            <div className="absolute bottom-3 left-3 w-6 h-6 border-b-2 border-l-2 border-[#C41E3A] shadow-[0_0_10px_rgba(196,30,58,0.5)]" />
+            <div className="absolute bottom-3 right-3 w-6 h-6 border-b-2 border-r-2 border-[#C41E3A] shadow-[0_0_10px_rgba(196,30,58,0.5)]" />
           </motion.div>
         )}
       </AnimatePresence>
@@ -145,10 +145,10 @@ export const AnimatedCharacter: React.FC = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.7 }}
-            className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 px-3 py-1 border border-[#D4AF37]/50 bg-black/75 backdrop-blur-sm pointer-events-none"
+            className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 px-3 py-1 border border-[#C41E3A]/50 bg-black/75 backdrop-blur-sm pointer-events-none"
             style={{ fontFamily: "'Courier New', monospace" }}
           >
-            <span className="text-[9.5px] tracking-[0.22em] uppercase text-[#D4AF37]">
+            <span className="text-[9.5px] tracking-[0.22em] uppercase text-[#C41E3A]">
               ◉ CyberS3an // Online
             </span>
           </motion.div>
